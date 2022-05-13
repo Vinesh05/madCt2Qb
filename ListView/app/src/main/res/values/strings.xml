@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ListView</string>
+    <string-array name="string_list">
+        <item>MAD</item>
+        <item>CPE</item>
+        <item>PWP</item>
+        <item>WBP</item>
+        <item>MAN</item>
+    </string-array>
+</resources>
