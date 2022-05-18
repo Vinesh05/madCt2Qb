@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,21 +9,23 @@
         android:id="@+id/txtCurrentTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Current Time: \n 00:00"
+        android:text="Current Time: (H:M)\n 00:00"
         android:textSize="24sp"/>
 
     <TimePicker
         android:id="@+id/timePicker"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:timePickerMode="spinner"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="24dp"
+        android:layout_below="@id/txtCurrentTime"/>
 
     <Button
         android:id="@+id/btnSetTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Change Time"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_toEndOf="@id/timePicker"
+        android:layout_alignBottom="@id/timePicker"/>
 
-</LinearLayout>
+</RelativeLayout>

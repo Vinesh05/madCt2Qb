@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.fragment.app.FragmentContainerView
+    android:id="@+id/mapFragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <ImageView
-        android:id="@+id/imgView"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:scaleType="center"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_launcher_background"/>
-
-    <ZoomControls
-        android:id="@+id/zoomControls"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"/>
-
-</LinearLayout>
+    android:name="com.google.android.gms.maps.SupportMapFragment" />

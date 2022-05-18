@@ -1,33 +1,32 @@
 package com.example.zoomcontrol;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.Toast;
-import android.widget.ZoomControls;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 
-    ZoomControls zoomControls;
-    ImageView imgView;
+public class MainActivity extends FragmentActivity implements OnMapReadyCallback {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        zoomControls = findViewById(R.id.zoomControls);
-        imgView = findViewById(R.id.imgView);
-
-        zoomControls.setOnZoomInClickListener(view -> {
-            imgView.setScaleX(imgView.getScaleX()+1);
-            imgView.setScaleY(imgView.getScaleY()+1);
-        });
-
-        zoomControls.setOnZoomOutClickListener(view-> {
-            imgView.setScaleX(imgView.getScaleX()-1);
-            imgView.setScaleY(imgView.getScaleY()-1);
-        });
+        SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapFragment);
+        supportMapFragment.getMapAsync(MainActivity.this);
 
     }
+
+    @Override
+    public void onMapReady(GoogleMap gm) {
+        Toast.makeText(this,"On Map Ready",Toast.LENGTH_SHORT).show();
+        gm.getUiSettings().setZoomControlsEnabled(true);
+    }
+
 }

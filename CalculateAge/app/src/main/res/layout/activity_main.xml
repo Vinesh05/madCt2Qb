@@ -1,20 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
-    <DatePicker
-        android:id="@+id/datePicker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/txtDateOfBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date Of Birth  "
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"/>
+
+    <EditText
+        android:id="@+id/edtTxtDateOfBirth"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:hint="11/06/2016"
+        android:drawableEnd="@drawable/calendar"
+        android:textSize="24sp"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@id/txtDateOfBirth"/>
+
+    <TextView
+        android:id="@+id/txtCurrentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Current Date  "
+        android:textSize="24sp"
+        android:layout_below="@id/txtDateOfBirth"/>
+
+    <EditText
+        android:id="@+id/edtTxtCurrentDate"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:hint="11/06/2016"
+        android:drawableEnd="@drawable/calendar"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_below="@id/edtTxtDateOfBirth"
+        android:layout_toEndOf="@id/txtCurrentDate"/>
 
     <Button
         android:id="@+id/btnCalculateAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calculate Age"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_below="@id/edtTxtCurrentDate"
+        android:layout_toEndOf="@id/txtCurrentDate"/>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/txtYourAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Age: 0"
+        android:layout_below="@id/btnCalculateAge"/>
+
+</RelativeLayout>
